@@ -12,5 +12,9 @@ class PlayViewController: UIViewController {
 
     
 
+    @IBAction func chooseRock(sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultsViewControllerSID") as! ResultsViewController
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
 }
 

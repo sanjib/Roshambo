@@ -28,6 +28,9 @@
                                 <state key="normal" image="rock">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="chooseRock:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="n1A-pD-UxL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swe-om-gPr">
                                 <rect key="frame" x="449" y="275" width="75" height="65"/>
@@ -61,14 +64,47 @@
         <!--Results View Controller-->
         <scene sceneID="iPS-mv-hOB">
             <objects>
-                <viewController id="V5S-Yi-aZ7" customClass="ResultsViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultsViewControllerSID" id="V5S-Yi-aZ7" customClass="ResultsViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FfD-D3-wVf"/>
                         <viewControllerLayoutGuide type="bottom" id="OY7-Vm-x5m"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ry8-oX-Ca1">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxA-jy-pEc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Play Again!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgain:" destination="V5S-Yi-aZ7" eventType="touchUpInside" id="5Kk-CF-cfV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OY7-Vm-x5m" firstAttribute="top" secondItem="LxA-jy-pEc" secondAttribute="bottom" constant="240" id="rzh-ms-Wks"/>
+                            <constraint firstAttribute="centerX" secondItem="LxA-jy-pEc" secondAttribute="centerX" constant="-0.5" id="yf3-fh-gby"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="LxA-jy-pEc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="yf3-fh-gby"/>
+                                <exclude reference="rzh-ms-Wks"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="LxA-jy-pEc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="yf3-fh-gby"/>
+                                <include reference="rzh-ms-Wks"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mak-o4-10X" userLabel="First Responder" sceneMemberID="firstResponder"/>
