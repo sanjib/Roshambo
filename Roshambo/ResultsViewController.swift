@@ -63,7 +63,6 @@ class ResultsViewController: UIViewController {
                     default:
                         whoWonLabel.text = "It's a tie!"
                         image = UIImage(named: "itsATie")
-                        
                     }
                 default:
                     break;
