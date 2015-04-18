@@ -10,18 +10,26 @@ import UIKit
 
 class PlayViewController: UIViewController {
     
+    private func randomRoshamboObject() -> String {
+        let roshamboObjects = ["rock", "paper", "scissor"]
+        let roshamboObjectIndex = Int(arc4random() % 3)
+        return roshamboObjects[roshamboObjectIndex]
+    }
+    
     @IBAction func choosePaper(sender: UIButton) {
+        randomRoshamboObject()
         performSegueWithIdentifier("ResultsViewControllerSegueForPaper", sender: self)
     }
 
     @IBAction func chooseRock(sender: UIButton) {
+        randomRoshamboObject()
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultsViewControllerSID") as! ResultsViewController
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ResultsViewControllerSegueForPaper" {
-            
+        if segue.identifier == "ResultsViewControllerSegueForScissor" {
+            randomRoshamboObject()
         }
     }
 }
