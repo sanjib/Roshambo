@@ -9,8 +9,10 @@
 import UIKit
 
 class PlayViewController: UIViewController {
-
     
+    @IBAction func choosePaper(sender: UIButton) {
+        performSegueWithIdentifier("ResultsViewControllerSegue", sender: self)
+    }
 
     @IBAction func chooseRock(sender: UIButton) {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultsViewControllerSID") as! ResultsViewController
