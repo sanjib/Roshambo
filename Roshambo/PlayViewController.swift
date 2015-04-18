@@ -11,12 +11,18 @@ import UIKit
 class PlayViewController: UIViewController {
     
     @IBAction func choosePaper(sender: UIButton) {
-        performSegueWithIdentifier("ResultsViewControllerSegue", sender: self)
+        performSegueWithIdentifier("ResultsViewControllerSegueForPaper", sender: self)
     }
 
     @IBAction func chooseRock(sender: UIButton) {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultsViewControllerSID") as! ResultsViewController
         self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ResultsViewControllerSegueForPaper" {
+            
+        }
     }
 }
 
