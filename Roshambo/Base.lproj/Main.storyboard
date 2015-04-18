@@ -59,9 +59,21 @@
                             <constraint firstItem="sIG-WE-ZaU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="120" id="ZvE-h2-pgE"/>
                             <constraint firstItem="bHZ-RK-aCp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="60" id="cSo-OP-aq7"/>
                             <constraint firstItem="bHZ-RK-aCp" firstAttribute="top" secondItem="sIG-WE-ZaU" secondAttribute="bottom" constant="75" id="cdV-z0-G4b"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lOl-VI-Tw5" secondAttribute="bottom" constant="130" id="kNu-wc-hg8"/>
                             <constraint firstAttribute="centerX" secondItem="lOl-VI-Tw5" secondAttribute="centerX" id="tG8-6c-ewW"/>
                             <constraint firstItem="Swe-om-gPr" firstAttribute="top" secondItem="sIG-WE-ZaU" secondAttribute="bottom" constant="70" id="tlM-vH-F34"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kNu-wc-hg8"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="EIo-25-d83"/>
+                                <include reference="kNu-wc-hg8"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <segue destination="V5S-Yi-aZ7" kind="presentation" identifier="ResultsViewControllerSegueForPaper" id="FKO-wY-Ql2"/>
@@ -90,6 +102,12 @@
                                     <action selector="playAgain:" destination="V5S-Yi-aZ7" eventType="touchUpInside" id="5Kk-CF-cfV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You chose:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HR0-ub-bue">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer chose:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytc-JR-NNH">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -104,43 +122,53 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cl1-kE-XQZ">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="80" y="20" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ndq-HO-hmJ"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ndq-HO-hmJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ndq-HO-hmJ"/>
+                                    </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You chose:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HR0-ub-bue">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nDx-Rb-UBI" firstAttribute="top" secondItem="Ytc-JR-NNH" secondAttribute="bottom" constant="9" id="IUb-2t-46n"/>
-                            <constraint firstAttribute="centerX" secondItem="Ytc-JR-NNH" secondAttribute="centerX" constant="-0.5" id="JyB-Ed-HUC"/>
-                            <constraint firstAttribute="centerX" secondItem="HR0-ub-bue" secondAttribute="centerX" constant="3.5" id="Mpg-5f-99c"/>
+                            <constraint firstItem="HR0-ub-bue" firstAttribute="top" secondItem="Cl1-kE-XQZ" secondAttribute="bottom" constant="30" id="1f3-iy-7r9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cl1-kE-XQZ" secondAttribute="trailing" constant="10" id="33G-32-p3i"/>
+                            <constraint firstItem="Cl1-kE-XQZ" firstAttribute="top" secondItem="FfD-D3-wVf" secondAttribute="bottom" constant="60" id="HNs-R4-lgC"/>
+                            <constraint firstItem="nDx-Rb-UBI" firstAttribute="top" secondItem="Ytc-JR-NNH" secondAttribute="bottom" constant="8" id="IUb-2t-46n"/>
+                            <constraint firstAttribute="centerX" secondItem="Ytc-JR-NNH" secondAttribute="centerX" id="JyB-Ed-HUC"/>
+                            <constraint firstAttribute="centerX" secondItem="HR0-ub-bue" secondAttribute="centerX" id="Mpg-5f-99c"/>
+                            <constraint firstItem="Cl1-kE-XQZ" firstAttribute="leading" secondItem="Ry8-oX-Ca1" secondAttribute="leadingMargin" constant="10" id="UWD-eU-yu9"/>
                             <constraint firstItem="Ytc-JR-NNH" firstAttribute="top" secondItem="HR0-ub-bue" secondAttribute="bottom" constant="8" id="V2H-5s-fsS"/>
-                            <constraint firstAttribute="centerX" secondItem="nDx-Rb-UBI" secondAttribute="centerX" constant="-0.5" id="Vau-kM-xmu"/>
-                            <constraint firstItem="LxA-jy-pEc" firstAttribute="top" secondItem="nDx-Rb-UBI" secondAttribute="bottom" constant="30" id="jLG-vJ-LEn"/>
-                            <constraint firstItem="OY7-Vm-x5m" firstAttribute="top" secondItem="LxA-jy-pEc" secondAttribute="bottom" constant="200" id="rzh-ms-Wks"/>
+                            <constraint firstAttribute="centerX" secondItem="nDx-Rb-UBI" secondAttribute="centerX" id="Vau-kM-xmu"/>
+                            <constraint firstItem="OY7-Vm-x5m" firstAttribute="top" secondItem="LxA-jy-pEc" secondAttribute="bottom" constant="130" id="rzh-ms-Wks"/>
                             <constraint firstAttribute="centerX" secondItem="LxA-jy-pEc" secondAttribute="centerX" constant="-0.5" id="yf3-fh-gby"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="LxA-jy-pEc"/>
+                                <exclude reference="HR0-ub-bue"/>
                                 <exclude reference="Ytc-JR-NNH"/>
                                 <exclude reference="nDx-Rb-UBI"/>
                                 <exclude reference="Cl1-kE-XQZ"/>
-                                <exclude reference="HR0-ub-bue"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="33G-32-p3i"/>
+                                <exclude reference="HNs-R4-lgC"/>
+                                <exclude reference="UWD-eU-yu9"/>
+                                <exclude reference="1f3-iy-7r9"/>
                                 <exclude reference="Mpg-5f-99c"/>
                                 <exclude reference="JyB-Ed-HUC"/>
                                 <exclude reference="V2H-5s-fsS"/>
                                 <exclude reference="IUb-2t-46n"/>
                                 <exclude reference="Vau-kM-xmu"/>
-                                <exclude reference="jLG-vJ-LEn"/>
                                 <exclude reference="yf3-fh-gby"/>
                                 <exclude reference="rzh-ms-Wks"/>
                             </mask>
@@ -148,23 +176,32 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="LxA-jy-pEc"/>
+                                <include reference="HR0-ub-bue"/>
                                 <include reference="Ytc-JR-NNH"/>
                                 <include reference="nDx-Rb-UBI"/>
                                 <include reference="Cl1-kE-XQZ"/>
-                                <include reference="HR0-ub-bue"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="33G-32-p3i"/>
+                                <include reference="HNs-R4-lgC"/>
+                                <include reference="UWD-eU-yu9"/>
+                                <include reference="1f3-iy-7r9"/>
                                 <include reference="Mpg-5f-99c"/>
                                 <include reference="JyB-Ed-HUC"/>
                                 <include reference="V2H-5s-fsS"/>
                                 <include reference="IUb-2t-46n"/>
                                 <include reference="Vau-kM-xmu"/>
-                                <include reference="jLG-vJ-LEn"/>
                                 <include reference="yf3-fh-gby"/>
                                 <include reference="rzh-ms-Wks"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="computerPlayersChoiceLabel" destination="Ytc-JR-NNH" id="5iV-gi-26P"/>
+                        <outlet property="humanPlayersChoiceLabel" destination="HR0-ub-bue" id="0EQ-g7-0MJ"/>
+                        <outlet property="resultsImageView" destination="Cl1-kE-XQZ" id="BlA-xv-8eD"/>
+                        <outlet property="whoWonLabel" destination="nDx-Rb-UBI" id="IJC-bs-Nnn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mak-o4-10X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
