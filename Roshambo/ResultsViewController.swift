@@ -16,6 +16,9 @@ class ResultsViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+
+        
+        
         println("you chose: \(humanPlayersChoice)")
         println("computer chose: \(computerPlayersChoice)")
     }
