@@ -240,6 +240,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5lq-8m-UF3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="m4a-Tx-Olf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fXl-KQ-uAo">
@@ -361,22 +362,22 @@
                                 <exclude reference="Ppu-zR-5jZ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="pTs-Qz-4H3"/>
+                                <exclude reference="SQf-yX-8aa"/>
+                                <exclude reference="agP-xj-XWE"/>
+                                <exclude reference="d02-i0-mBP"/>
+                                <exclude reference="fmz-6z-qZu"/>
+                                <exclude reference="KGp-Ah-QZL"/>
+                                <exclude reference="9Ao-Ae-WTX"/>
+                                <exclude reference="1up-Oh-qo3"/>
+                                <exclude reference="aaF-13-csG"/>
+                                <exclude reference="SS1-au-25q"/>
+                                <exclude reference="Xwg-QT-9YP"/>
                                 <exclude reference="BvU-C5-FZJ"/>
                                 <exclude reference="rY8-hU-nWA"/>
                                 <exclude reference="2bK-n9-peL"/>
                                 <exclude reference="HI7-BN-naM"/>
                                 <exclude reference="eBj-8U-YMv"/>
-                                <exclude reference="1up-Oh-qo3"/>
-                                <exclude reference="aaF-13-csG"/>
-                                <exclude reference="KGp-Ah-QZL"/>
-                                <exclude reference="SQf-yX-8aa"/>
-                                <exclude reference="agP-xj-XWE"/>
-                                <exclude reference="d02-i0-mBP"/>
-                                <exclude reference="fmz-6z-qZu"/>
-                                <exclude reference="9Ao-Ae-WTX"/>
-                                <exclude reference="SS1-au-25q"/>
-                                <exclude reference="Xwg-QT-9YP"/>
-                                <exclude reference="pTs-Qz-4H3"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -390,22 +391,22 @@
                                 <include reference="Ppu-zR-5jZ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="pTs-Qz-4H3"/>
+                                <include reference="SQf-yX-8aa"/>
+                                <include reference="agP-xj-XWE"/>
+                                <include reference="d02-i0-mBP"/>
+                                <include reference="fmz-6z-qZu"/>
+                                <include reference="KGp-Ah-QZL"/>
+                                <include reference="9Ao-Ae-WTX"/>
+                                <include reference="1up-Oh-qo3"/>
+                                <include reference="aaF-13-csG"/>
+                                <include reference="SS1-au-25q"/>
+                                <include reference="Xwg-QT-9YP"/>
                                 <include reference="BvU-C5-FZJ"/>
                                 <include reference="rY8-hU-nWA"/>
                                 <include reference="2bK-n9-peL"/>
                                 <include reference="HI7-BN-naM"/>
                                 <include reference="eBj-8U-YMv"/>
-                                <include reference="1up-Oh-qo3"/>
-                                <include reference="aaF-13-csG"/>
-                                <include reference="KGp-Ah-QZL"/>
-                                <include reference="SQf-yX-8aa"/>
-                                <include reference="agP-xj-XWE"/>
-                                <include reference="d02-i0-mBP"/>
-                                <include reference="fmz-6z-qZu"/>
-                                <include reference="9Ao-Ae-WTX"/>
-                                <include reference="SS1-au-25q"/>
-                                <include reference="Xwg-QT-9YP"/>
-                                <include reference="pTs-Qz-4H3"/>
                             </mask>
                         </variation>
                     </view>
