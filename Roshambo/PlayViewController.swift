@@ -22,20 +22,17 @@ class PlayViewController: UIViewController {
 
     @IBAction func chooseRock(sender: UIButton) {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultsViewControllerSID") as! ResultsViewController
-        controller.humanPlayersChoice = "rock"
-        controller.computerPlayersChoice = randomRoshamboObject()
+        controller.matchResult = MatchResult(humanPlayersChoice: "rock", computerPlayersChoice: randomRoshamboObject())
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ResultsViewControllerSegueForScissor" {
             let controller = segue.destinationViewController as! ResultsViewController
-            controller.humanPlayersChoice = "scissor"
-            controller.computerPlayersChoice = randomRoshamboObject()
+            controller.matchResult = MatchResult(humanPlayersChoice: "scissor", computerPlayersChoice: randomRoshamboObject())
         } else if segue.identifier == "ResultsViewControllerSegueForPaper" {
             let controller = segue.destinationViewController as! ResultsViewController
-            controller.humanPlayersChoice = "paper"
-            controller.computerPlayersChoice = randomRoshamboObject()
+            controller.matchResult = MatchResult(humanPlayersChoice: "paper", computerPlayersChoice: randomRoshamboObject())
         }
     }
 }
