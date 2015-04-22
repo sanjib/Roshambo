@@ -23,7 +23,8 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("HistoryCell") as! UITableViewCell
         let matchResult = history[indexPath.row]
         cell.textLabel?.text = "\(matchResult.whoWon)"
-        cell.detailTextLabel?.text = "You chose:\(matchResult.humanPlayersChoice). Computer chose:\(matchResult.computerPlayersChoice)."        
+        cell.detailTextLabel?.text = "You chose:\(matchResult.humanPlayersChoice). Computer chose:\(matchResult.computerPlayersChoice)."
+        cell.imageView?.image = UIImage(named: matchResult.imageName)
         return cell
     }
 
