@@ -9,10 +9,40 @@
 import UIKit
 
 class HistoryViewController: UIViewController, UITableViewDataSource {
+    @IBOutlet weak var allTimeWinnerImageView: UIImageView!
+    @IBOutlet weak var humanWinsTallyLabel: UILabel!
+    @IBOutlet weak var computerWinsTallyLabel: UILabel!
+    
     var history: [MatchResult]!
+    var totalHumanWins = 0
+    var totalComputerWins = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        for matchResult: MatchResult in history {
+            switch matchResult.whoWon! {
+            case .Computer:
+                totalComputerWins++
+            case .Human:
+                totalHumanWins++
+            default:
+                break
+            }
+        }
+        humanWinsTallyLabel.text = String(totalHumanWins)
+        computerWinsTallyLabel.text = String(totalComputerWins)
+        if totalHumanWins > totalComputerWins {
+            allTimeWinnerImageView.image = UIImage(named: "HumanWins")
+        } else if totalComputerWins > totalHumanWins {
+            allTimeWinnerImageView.image = UIImage(named: "ComputerWins")
+        } else {
+            allTimeWinnerImageView.image = UIImage(named: "NoWinner")
+        }
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -22,7 +52,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("HistoryCell") as! UITableViewCell
         let matchResult = history[indexPath.row]
-        cell.textLabel?.text = "\(matchResult.whoWon)"
+        cell.textLabel?.text = matchResult.whoWonResult
         cell.detailTextLabel?.text = "You chose:\(matchResult.humanPlayersChoice). Computer chose:\(matchResult.computerPlayersChoice)."
         cell.imageView?.image = UIImage(named: matchResult.imageName)
         return cell

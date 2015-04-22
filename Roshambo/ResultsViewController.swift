@@ -31,43 +31,52 @@ class ResultsViewController: UIViewController {
         case "rock":
             switch computerPlayersChoice {
             case "paper":
-                matchResult.whoWon = "Paper covers rock. Computer wins!"
+                matchResult.whoWon = WhoWon.Computer
+                matchResult.whoWonResult = "Paper covers rock. Computer wins!"
                 matchResult.imageName = "PaperCoversRock"
             case "scissor":
-                matchResult.whoWon = "Rock crushes scissors. You win!"
+                matchResult.whoWon = WhoWon.Human
+                matchResult.whoWonResult = "Rock crushes scissors. You win!"
                 matchResult.imageName = "RockCrushesScissors"
             default:
-                matchResult.whoWon = "It's a tie!"
+                matchResult.whoWon = WhoWon.Tie
+                matchResult.whoWonResult = "It's a tie!"
                 matchResult.imageName = "itsATie"
             }
         case "paper":
             switch computerPlayersChoice {
             case "rock":
-                matchResult.whoWon = "Paper covers rock. You win!"
+                matchResult.whoWon = WhoWon.Human
+                matchResult.whoWonResult = "Paper covers rock. You win!"
                 matchResult.imageName = "PaperCoversRock"
             case "scissor":
-                matchResult.whoWon = "Scissors cut paper. Computer wins!"
+                matchResult.whoWon = WhoWon.Computer
+                matchResult.whoWonResult = "Scissors cut paper. Computer wins!"
                 matchResult.imageName = "ScissorsCutPaper"
             default:
-                matchResult.whoWon = "It's a tie!"
+                matchResult.whoWon = WhoWon.Tie
+                matchResult.whoWonResult = "It's a tie!"
                 matchResult.imageName = "itsATie"
             }
         case "scissor":
             switch computerPlayersChoice {
             case "rock":
-                matchResult.whoWon = "Rock crushes scissors. Computer wins!"
+                matchResult.whoWon = WhoWon.Computer
+                matchResult.whoWonResult = "Rock crushes scissors. Computer wins!"
                 matchResult.imageName = "RockCrushesScissors"
             case "paper":
-                matchResult.whoWon = "Scissors cut paper. You win!"
+                matchResult.whoWon = WhoWon.Human
+                matchResult.whoWonResult = "Scissors cut paper. You win!"
                 matchResult.imageName = "ScissorsCutPaper"
             default:
-                matchResult.whoWon = "It's a tie!"
+                matchResult.whoWon = WhoWon.Tie
+                matchResult.whoWonResult = "It's a tie!"
                 matchResult.imageName = "itsATie"
             }
         default:
             break;
         }
-        whoWonLabel.text = matchResult.whoWon
+        whoWonLabel.text = matchResult.whoWonResult
         resultsImageView.image = UIImage(named: matchResult.imageName)
         
     }
