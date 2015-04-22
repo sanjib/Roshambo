@@ -25,4 +25,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
         return cell
     }
 
+    @IBAction func goBack(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

@@ -254,23 +254,55 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="1nA-Kb-C9f" id="OT8-pm-9U0"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdj-kI-Pg4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="1nA-Kb-C9f" eventType="touchUpInside" id="Gw8-eB-dIT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fXl-KQ-uAo" firstAttribute="leading" secondItem="m4a-Tx-Olf" secondAttribute="leadingMargin" id="HI7-BN-naM"/>
+                            <constraint firstItem="cdj-kI-Pg4" firstAttribute="top" secondItem="fXl-KQ-uAo" secondAttribute="bottom" constant="8" id="SS1-au-25q"/>
+                            <constraint firstItem="cdj-kI-Pg4" firstAttribute="leading" secondItem="m4a-Tx-Olf" secondAttribute="leadingMargin" id="Xwg-QT-9YP"/>
+                            <constraint firstItem="fXl-KQ-uAo" firstAttribute="trailing" secondItem="m4a-Tx-Olf" secondAttribute="trailingMargin" id="eBj-8U-YMv"/>
+                            <constraint firstItem="5lq-8m-UF3" firstAttribute="top" secondItem="cdj-kI-Pg4" secondAttribute="bottom" constant="20" id="pTs-Qz-4H3"/>
+                            <constraint firstItem="fXl-KQ-uAo" firstAttribute="top" secondItem="4io-2g-uPv" secondAttribute="bottom" constant="8" id="zgM-CF-5Vi"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="fXl-KQ-uAo"/>
+                                <exclude reference="cdj-kI-Pg4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="HI7-BN-naM"/>
+                                <exclude reference="eBj-8U-YMv"/>
+                                <exclude reference="zgM-CF-5Vi"/>
+                                <exclude reference="SS1-au-25q"/>
+                                <exclude reference="Xwg-QT-9YP"/>
+                                <exclude reference="pTs-Qz-4H3"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="fXl-KQ-uAo"/>
+                                <include reference="cdj-kI-Pg4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="HI7-BN-naM"/>
+                                <include reference="eBj-8U-YMv"/>
+                                <include reference="zgM-CF-5Vi"/>
+                                <include reference="SS1-au-25q"/>
+                                <include reference="Xwg-QT-9YP"/>
+                                <include reference="pTs-Qz-4H3"/>
                             </mask>
                         </variation>
                     </view>
