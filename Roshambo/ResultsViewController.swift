@@ -15,12 +15,27 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var whoWonLabel: UILabel!
     
     var matchResult: MatchResult!
+    let whoWonEnumToNaturalLanguageTranslation = [WhoWon.Computer: "Computer wins!", WhoWon.Human: "You win!"]
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        var image: UIImage!
-        
+    private func paperCoversRock(whoWon: WhoWon) {
+        matchResult.whoWon = whoWon
+        matchResult.whoWonResult = "Paper covers rock. \(whoWonEnumToNaturalLanguageTranslation[whoWon]!)"
+        matchResult.imageName = "PaperCoversRock"
+    }
+    
+    private func rockCrushesScissors(whoWon: WhoWon) {
+        matchResult.whoWon = whoWon
+        matchResult.whoWonResult = "Rock crushes scissors. \(whoWonEnumToNaturalLanguageTranslation[whoWon]!)"
+        matchResult.imageName = "RockCrushesScissors"
+    }
+    
+    private func scissorsCutPaper(whoWon: WhoWon) {
+        matchResult.whoWon = whoWon
+        matchResult.whoWonResult = "Scissors cut paper. \(whoWonEnumToNaturalLanguageTranslation[whoWon]!)"
+        matchResult.imageName = "ScissorsCutPaper"
+    }
+    
+    private func playGame() {
         let humanPlayersChoice = self.matchResult.humanPlayersChoice
         let computerPlayersChoice = self.matchResult.computerPlayersChoice
         
@@ -28,57 +43,33 @@ class ResultsViewController: UIViewController {
         computerPlayersChoiceLabel.text = "Computer chose: \(computerPlayersChoice)"
         
         switch humanPlayersChoice {
-        case "rock":
-            switch computerPlayersChoice {
-            case "paper":
-                matchResult.whoWon = WhoWon.Computer
-                matchResult.whoWonResult = "Paper covers rock. Computer wins!"
-                matchResult.imageName = "PaperCoversRock"
-            case "scissor":
-                matchResult.whoWon = WhoWon.Human
-                matchResult.whoWonResult = "Rock crushes scissors. You win!"
-                matchResult.imageName = "RockCrushesScissors"
-            default:
-                matchResult.whoWon = WhoWon.Tie
-                matchResult.whoWonResult = "It's a tie!"
-                matchResult.imageName = "itsATie"
-            }
-        case "paper":
-            switch computerPlayersChoice {
-            case "rock":
-                matchResult.whoWon = WhoWon.Human
-                matchResult.whoWonResult = "Paper covers rock. You win!"
-                matchResult.imageName = "PaperCoversRock"
-            case "scissor":
-                matchResult.whoWon = WhoWon.Computer
-                matchResult.whoWonResult = "Scissors cut paper. Computer wins!"
-                matchResult.imageName = "ScissorsCutPaper"
-            default:
-                matchResult.whoWon = WhoWon.Tie
-                matchResult.whoWonResult = "It's a tie!"
-                matchResult.imageName = "itsATie"
-            }
-        case "scissor":
-            switch computerPlayersChoice {
-            case "rock":
-                matchResult.whoWon = WhoWon.Computer
-                matchResult.whoWonResult = "Rock crushes scissors. Computer wins!"
-                matchResult.imageName = "RockCrushesScissors"
-            case "paper":
-                matchResult.whoWon = WhoWon.Human
-                matchResult.whoWonResult = "Scissors cut paper. You win!"
-                matchResult.imageName = "ScissorsCutPaper"
-            default:
-                matchResult.whoWon = WhoWon.Tie
-                matchResult.whoWonResult = "It's a tie!"
-                matchResult.imageName = "itsATie"
-            }
+        case "rock" where computerPlayersChoice == "paper":
+            paperCoversRock(WhoWon.Computer)
+        case "rock" where computerPlayersChoice == "scissor":
+            rockCrushesScissors(WhoWon.Human)
+        case "paper" where computerPlayersChoice == "rock":
+            paperCoversRock(WhoWon.Human)
+        case "paper" where computerPlayersChoice == "scissor":
+            scissorsCutPaper(WhoWon.Computer)
+        case "scissor" where computerPlayersChoice == "rock":
+            rockCrushesScissors(WhoWon.Computer)
+        case "scissor" where computerPlayersChoice == "paper":
+            scissorsCutPaper(WhoWon.Human)
         default:
-            break;
+            matchResult.whoWon = WhoWon.Tie
+            matchResult.whoWonResult = "It's a tie!"
+            matchResult.imageName = "itsATie"
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        playGame()
+        
+        var image: UIImage!
         whoWonLabel.text = matchResult.whoWonResult
         resultsImageView.image = UIImage(named: matchResult.imageName)
-        
     }
 
     @IBAction func playAgain(sender: UIButton) {
