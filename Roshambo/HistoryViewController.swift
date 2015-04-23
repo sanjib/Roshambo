@@ -59,6 +59,6 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
     }
 
     @IBAction func goBack(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 }

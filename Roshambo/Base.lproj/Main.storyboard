@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4a1-VX-A9b">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="abc-BD-npT">
+            <objects>
+                <navigationController id="4a1-VX-A9b" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zIi-Uy-5om">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="n5A-2J-adx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2b-4l-6X3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-321" y="315"/>
+        </scene>
         <!--Play View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -42,7 +58,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="V5S-Yi-aZ7" kind="presentation" identifier="ResultsViewControllerSegueForScissor" id="CiE-ND-4YO"/>
+                                    <segue destination="V5S-Yi-aZ7" kind="show" identifier="ResultsViewControllerSegueForScissor" id="CiE-ND-4YO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Play!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOl-VI-Tw5">
@@ -51,54 +67,48 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWx-61-SIk">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="History">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1nA-Kb-C9f" kind="presentation" identifier="HistorySegue" id="f68-SS-tbh"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lOl-VI-Tw5" firstAttribute="top" secondItem="sIG-WE-ZaU" secondAttribute="bottom" constant="240" id="EIo-25-d83"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Swe-om-gPr" secondAttribute="trailing" constant="60" id="LRe-zp-a6T"/>
-                            <constraint firstItem="IWx-61-SIk" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="NYA-Ki-L9f"/>
                             <constraint firstAttribute="centerX" secondItem="sIG-WE-ZaU" secondAttribute="centerX" id="UYw-ay-C3e"/>
                             <constraint firstItem="sIG-WE-ZaU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="120" id="ZvE-h2-pgE"/>
                             <constraint firstItem="bHZ-RK-aCp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="60" id="cSo-OP-aq7"/>
                             <constraint firstItem="bHZ-RK-aCp" firstAttribute="top" secondItem="sIG-WE-ZaU" secondAttribute="bottom" constant="75" id="cdV-z0-G4b"/>
-                            <constraint firstItem="IWx-61-SIk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="dpM-VP-41O"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lOl-VI-Tw5" secondAttribute="bottom" constant="130" id="kNu-wc-hg8"/>
                             <constraint firstAttribute="centerX" secondItem="lOl-VI-Tw5" secondAttribute="centerX" id="tG8-6c-ewW"/>
                             <constraint firstItem="Swe-om-gPr" firstAttribute="top" secondItem="sIG-WE-ZaU" secondAttribute="bottom" constant="70" id="tlM-vH-F34"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="IWx-61-SIk"/>
-                            </mask>
                             <mask key="constraints">
-                                <exclude reference="NYA-Ki-L9f"/>
-                                <exclude reference="dpM-VP-41O"/>
                                 <exclude reference="kNu-wc-hg8"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="IWx-61-SIk"/>
-                            </mask>
                             <mask key="constraints">
-                                <include reference="NYA-Ki-L9f"/>
-                                <include reference="dpM-VP-41O"/>
                                 <exclude reference="EIo-25-d83"/>
                                 <include reference="kNu-wc-hg8"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="dpF-Uh-Qol">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="Psi-VS-kCe">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ClY-Fa-m23">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="History">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1nA-Kb-C9f" kind="show" identifier="HistorySegue" id="a5d-ch-dTV"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <segue destination="V5S-Yi-aZ7" kind="presentation" identifier="ResultsViewControllerSegueForPaper" id="FKO-wY-Ql2"/>
+                        <segue destination="V5S-Yi-aZ7" kind="show" identifier="ResultsViewControllerSegueForPaper" id="FKO-wY-Ql2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

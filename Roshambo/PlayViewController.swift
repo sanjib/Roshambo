@@ -25,7 +25,7 @@ class PlayViewController: UIViewController {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultsViewControllerSID") as! ResultsViewController
         controller.matchResult = MatchResult(humanPlayersChoice: "rock", computerPlayersChoice: randomRoshamboObject())
         history.append(controller.matchResult)
-        self.presentViewController(controller, animated: true, completion: nil)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
