@@ -22,7 +22,7 @@ class ResultsViewController: UIViewController {
         humanPlayersChoiceLabel.text = "You chose: \(matchResult.humanPlayersChoice)"
         computerPlayersChoiceLabel.text = "Computer chose: \(matchResult.computerPlayersChoice)"
         
-        var image: UIImage!
+//        var image: UIImage!
         whoWonLabel.text = matchResult.whoWonResult
         resultsImageView.image = UIImage(named: matchResult.imageName)
     }
