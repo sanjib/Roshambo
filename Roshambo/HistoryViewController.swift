@@ -50,7 +50,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("HistoryCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("HistoryCell")!
         let matchResult = history[indexPath.row]
         cell.textLabel?.text = matchResult.whoWonResult
         cell.detailTextLabel?.text = "You chose:\(matchResult.humanPlayersChoice). Computer chose:\(matchResult.computerPlayersChoice)."
